@@ -18,11 +18,16 @@ class InstagramClientAdapter(JSONAdapterMixin, TapiocaAdapter):
         return params
 
     def get_iterator_list(self, response_data):
-        return response_data
+        return response_data['data']
 
     def get_iterator_next_request_kwargs(self,
             iterator_request_kwargs, response_data, response):
-        pass
+        paging = response_data.get('pagination')
+        if not paging:
+            return
+        url = paging.get('next_url')
+        if url:
+            return {'url': url}
 
 
 Instagram = generate_wrapper_from_adapter(InstagramClientAdapter)
