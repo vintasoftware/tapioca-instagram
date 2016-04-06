@@ -5,4 +5,4 @@ __email__ = 'andersonresende86@gmail.com'
 __version__ = '0.1'
 
 
-from tapioca_instagram import Instagram
+from .tapioca_instagram import Instagram
