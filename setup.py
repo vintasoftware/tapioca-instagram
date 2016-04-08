@@ -20,8 +20,7 @@ except (IOError, ImportError):
 
 package = 'tapioca_instagram'
 requirements = [
-    'tapioca-wrapper<0.7.0',
-    
+    'tapioca-wrapper<2',
     'requests-oauthlib==0.4.2',
     
 ]
