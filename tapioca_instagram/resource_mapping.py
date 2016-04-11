@@ -10,4 +10,8 @@ RESOURCE_MAPPING = {
         'docs': 'https://instagram.com/developer/endpoints/users/#get_users_search',
         'methods': ['GET']
     },
+    'user_media_recent': {
+        'resource': 'users/{id}/media/recent',
+        'docs': 'https://www.instagram.com/developer/endpoints/users/#get_users_media_recent',
+    }
 }
