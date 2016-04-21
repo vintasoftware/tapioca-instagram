@@ -20,8 +20,7 @@ except (IOError, ImportError):
 
 package = 'tapioca_instagram'
 requirements = [
-    'tapioca-wrapper<0.7.0',
-    
+    'tapioca-wrapper<2',
     'requests-oauthlib==0.4.2',
     
 ]
@@ -58,9 +57,9 @@ def get_email(package):
 if sys.argv[-1] == 'publish':
     os.system("python setup.py sdist upload")
     args = {'version': get_version(package)}
-    print "You probably want to also tag the version now:"
-    print "  git tag -a %(version)s -m 'version %(version)s'" % args
-    print "  git push --tags"
+    print("You probably want to also tag the version now:")
+    print("  git tag -a %(version)s -m 'version %(version)s'" % args)
+    print("  git push --tags")
     sys.exit()
 
 

@@ -2,7 +2,7 @@
 
 from tapioca import (
     TapiocaAdapter, generate_wrapper_from_adapter, JSONAdapterMixin)
-from resource_mapping import RESOURCE_MAPPING
+from .resource_mapping import RESOURCE_MAPPING
 
 
 class InstagramClientAdapter(JSONAdapterMixin, TapiocaAdapter):
