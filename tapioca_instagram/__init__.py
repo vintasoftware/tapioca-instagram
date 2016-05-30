@@ -2,7 +2,7 @@
 
 __author__ = 'Anderson Resende'
 __email__ = 'andersonresende86@gmail.com'
-__version__ = '0.1'
+__version__ = '0.2'
 
 
 from .tapioca_instagram import Instagram
