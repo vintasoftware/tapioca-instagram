@@ -52,7 +52,7 @@ RESOURCE_MAPPING = {
         'methods': ['GET']
     },
     'media_shortcode': {
-        'resource': 'media/{shortcode}',
+        'resource': 'media/shortcode/{shortcode}',
         'docs': 'https://instagram.com/developer/endpoints/media/#get_media_by_shortcode',
         'methods': ['GET']
     },
