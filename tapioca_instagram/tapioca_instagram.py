@@ -1,7 +1,8 @@
 # coding: utf-8
 
-from tapioca import (
-    TapiocaAdapter, generate_wrapper_from_adapter, JSONAdapterMixin)
+from tapioca import (JSONAdapterMixin, TapiocaAdapter,
+                     generate_wrapper_from_adapter)
+
 from .resource_mapping import RESOURCE_MAPPING
 
 
@@ -12,16 +13,18 @@ class InstagramClientAdapter(JSONAdapterMixin, TapiocaAdapter):
     def get_request_kwargs(self, api_params, *args, **kwargs):
         params = super(InstagramClientAdapter, self).get_request_kwargs(
             api_params, *args, **kwargs)
-        params['params'] = {
+        params['params'].update({
             'access_token': api_params.get('access_token', '')
-        }
+        })
+        import ipdb
+        ipdb.set_trace()
         return params
 
     def get_iterator_list(self, response_data):
         return response_data['data']
 
-    def get_iterator_next_request_kwargs(self,
-            iterator_request_kwargs, response_data, response):
+    def get_iterator_next_request_kwargs(self, iterator_request_kwargs,
+                                         response_data, response):
         paging = response_data.get('pagination')
         if not paging:
             return
