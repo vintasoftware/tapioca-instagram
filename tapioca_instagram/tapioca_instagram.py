@@ -16,8 +16,6 @@ class InstagramClientAdapter(JSONAdapterMixin, TapiocaAdapter):
         params['params'].update({
             'access_token': api_params.get('access_token', '')
         })
-        import ipdb
-        ipdb.set_trace()
         return params
 
     def get_iterator_list(self, response_data):
