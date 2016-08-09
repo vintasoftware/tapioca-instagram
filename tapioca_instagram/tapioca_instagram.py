@@ -13,9 +13,9 @@ class InstagramClientAdapter(JSONAdapterMixin, TapiocaAdapter):
     def get_request_kwargs(self, api_params, *args, **kwargs):
         params = super(InstagramClientAdapter, self).get_request_kwargs(
             api_params, *args, **kwargs)
-        params['params'].update({
-            'access_token': api_params.get('access_token', '')
-        })
+        params.setdefault('params', {}).update(
+            {'access_token': api_params.get('access_token', '')}
+        )
         return params
 
     def get_iterator_list(self, response_data):
